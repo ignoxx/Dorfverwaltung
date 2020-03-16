@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\ignox\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\ignox\\.nuget\\packages"
+    ]
+  }
+}

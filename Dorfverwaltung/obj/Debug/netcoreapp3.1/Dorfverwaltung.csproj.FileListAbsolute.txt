@@ -1,0 +1,10 @@
+C:\Users\ignox\source\repos\Dorfverwaltung\Dorfverwaltung\bin\Debug\netcoreapp3.1\Dorfverwaltung.exe
+C:\Users\ignox\source\repos\Dorfverwaltung\Dorfverwaltung\bin\Debug\netcoreapp3.1\Dorfverwaltung.deps.json
+C:\Users\ignox\source\repos\Dorfverwaltung\Dorfverwaltung\bin\Debug\netcoreapp3.1\Dorfverwaltung.runtimeconfig.json
+C:\Users\ignox\source\repos\Dorfverwaltung\Dorfverwaltung\bin\Debug\netcoreapp3.1\Dorfverwaltung.runtimeconfig.dev.json
+C:\Users\ignox\source\repos\Dorfverwaltung\Dorfverwaltung\bin\Debug\netcoreapp3.1\Dorfverwaltung.dll
+C:\Users\ignox\source\repos\Dorfverwaltung\Dorfverwaltung\bin\Debug\netcoreapp3.1\Dorfverwaltung.pdb
+C:\Users\ignox\source\repos\Dorfverwaltung\Dorfverwaltung\obj\Debug\netcoreapp3.1\Dorfverwaltung.AssemblyInfoInputs.cache
+C:\Users\ignox\source\repos\Dorfverwaltung\Dorfverwaltung\obj\Debug\netcoreapp3.1\Dorfverwaltung.AssemblyInfo.cs
+C:\Users\ignox\source\repos\Dorfverwaltung\Dorfverwaltung\obj\Debug\netcoreapp3.1\Dorfverwaltung.dll
+C:\Users\ignox\source\repos\Dorfverwaltung\Dorfverwaltung\obj\Debug\netcoreapp3.1\Dorfverwaltung.pdb
