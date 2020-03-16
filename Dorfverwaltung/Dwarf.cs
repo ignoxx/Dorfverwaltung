@@ -14,7 +14,6 @@ namespace Dorfverwaltung
             get { return _tribe; }
             set
             {
-
                 _tribe = value;
                 _tribe.addMember(this);
             }
