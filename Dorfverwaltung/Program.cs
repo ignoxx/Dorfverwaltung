@@ -34,6 +34,16 @@ namespace Dorfverwaltung
             t1.printTribe();
             t2.printTribe();
 
+            // Give weapon
+            d1.giveWeapon(w1);
+            d2.giveWeapon(w3);
+            d3.giveWeapon(w5);
+            d3.giveWeapon(w2);
+
+            //Output
+            t1.printTribe();
+            t2.printTribe();
+
             Console.ReadKey();
         }
     }

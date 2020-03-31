@@ -30,8 +30,18 @@ namespace Dorfverwaltung
             this.Force += member.Force;
         }
 
+        private void CalculateForce()
+        {
+            Force = 0;
+            foreach (var member in Members)
+                Force += member.Force;
+            
+        }
+
         public void printTribe()
         {
+            CalculateForce();
+
             Console.WriteLine($"-- {Name} --");
             Console.WriteLine($"\tExisting since: {ExistingSince}");
             Console.WriteLine($"\tLeader: {Leader.Name} since {LeaderSince}");

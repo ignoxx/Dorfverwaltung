@@ -29,8 +29,6 @@ namespace Dorfverwaltung
                 {
                     this.Force += weapon.MagicValue;
                 }
-
-                Tribe.Force += this.Force;
             }
         }
 
