@@ -27,24 +27,54 @@ namespace Dorfverwaltung
             t1.LeaderSince = "25 years";
 
             t2.Leader = d3;
-            t2.LeaderSince = "? years";
+            t2.LeaderSince = "unknown";
 
+            // User Input
+            string dwarfName;
+            string weaponName;
+            while (true)
+            {
+                // Output
+                Console.Clear();
 
-            //Output
-            t1.printTribe();
-            t2.printTribe();
+                t1.printTribe();
+                t2.printTribe();
 
-            // Give weapon
-            d1.giveWeapon(w1);
-            d2.giveWeapon(w3);
-            d3.giveWeapon(w5);
-            d3.giveWeapon(w2);
+                // List existing weapons
+                Console.Write("Weapons:");
+                foreach(var weapon in Weapon.Weapons)
+                    Console.Write($" {weapon.Type}({weapon.MagicValue})");
+                
+                Console.WriteLine();
+                Console.WriteLine();
 
-            //Output
-            t1.printTribe();
-            t2.printTribe();
+                // User Input
+                Console.Write("Enter Dwarf name: ");
+                dwarfName = Console.ReadLine();
 
-            Console.ReadKey();
+                Console.Write("Choose a weapon: ");
+                weaponName = Console.ReadLine();
+
+                // Simple input check
+                if (dwarfName.Length == 0 || weaponName.Length == 0)
+                    return;
+
+                // Search for the dwarf give weapon
+                foreach(var dwarf in Dwarf.Dwarfs)
+                {
+                    if(dwarf.Name == dwarfName)
+                    {
+                        foreach(var weapon in Weapon.Weapons)
+                        {
+                            if (weapon.Type == weaponName)
+                            {
+                                dwarf.giveWeapon(weapon);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

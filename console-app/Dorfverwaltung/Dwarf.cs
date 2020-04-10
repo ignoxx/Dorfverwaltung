@@ -4,8 +4,13 @@ namespace Dorfverwaltung
 {
     class Dwarf
     {
+        public static List<Dwarf> Dwarfs = new List<Dwarf>();
+
         private Tribe _tribe;
         private List<Weapon> _weapons = new List<Weapon>();
+
+        public Dwarf() => Dwarfs.Add(this);
+        
 
         public string Name { get; set; }
         public int Age { get; set; }
