@@ -43,7 +43,13 @@ namespace Dorfverwaltung
         public static void PrintTribes()
         {
             foreach (var tribe in Tribe.Tribes)
+<<<<<<< HEAD
                 tribe.PrintTribe();
+=======
+            {
+                tribe.PrintTribe();
+            }
+>>>>>>> 887ba262cbed61634bce93967b5c8ae159abc4a9
         }
 
         public void PrintTribe()
@@ -55,7 +61,9 @@ namespace Dorfverwaltung
             Console.WriteLine($"\tLeader: {Leader.Name} since {LeaderSince} years");
             Console.WriteLine("\tMembers:");
             foreach (var member in Members)
+            {
                 Console.WriteLine($"\t\t - {member.Name}");
+            }
 
             Console.WriteLine($"\tTaxes: {Tax} gold");
             Console.WriteLine($"\tTotal force: {Force}");
