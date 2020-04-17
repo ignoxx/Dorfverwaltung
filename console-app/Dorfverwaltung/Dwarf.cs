@@ -5,13 +5,10 @@ namespace Dorfverwaltung
     class Dwarf
     {
         public static List<Dwarf> Dwarfs = new List<Dwarf>();
-
-        private Tribe _tribe;
         private List<Weapon> _weapons = new List<Weapon>();
+        private Tribe _tribe;
 
         public Dwarf() => Dwarfs.Add(this);
-        
-
         public string Name { get; set; }
         public int Age { get; set; }
         public Tribe Tribe
@@ -20,7 +17,7 @@ namespace Dorfverwaltung
             set
             {
                 _tribe = value;
-                _tribe.addMember(this);
+                _tribe.AddMember(this);
             }
         }
         public int Force { get; set; }
@@ -31,13 +28,10 @@ namespace Dorfverwaltung
             {
                 _weapons = value;
                 foreach (var weapon in _weapons)
-                {
                     this.Force += weapon.MagicValue;
-                }
             }
         }
-
-        public void giveWeapon(Weapon weapon)
+        public void GiveWeapon(Weapon weapon)
         {
             this.Weapons.Add(weapon);
             this.Force += weapon.MagicValue;

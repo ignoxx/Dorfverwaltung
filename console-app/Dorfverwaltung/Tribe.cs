@@ -5,7 +5,8 @@ namespace Dorfverwaltung
 {
     class Tribe
     {
-        private const int tax_rate = 2125;
+        public static List<Tribe> Tribes = new List<Tribe>();
+        private const float tax_rate = 2.125f;
         private int _force;
 
         public string Name { get; set; }
@@ -20,11 +21,13 @@ namespace Dorfverwaltung
                 Tax = _force * tax_rate;
             }
         }
-        public int Tax { get; set; }
+        public float Tax { get; set; }
         public Dwarf Leader { get; set; }
-        public string LeaderSince { get; set; }
+        public int LeaderSince { get; set; }
 
-        public void addMember(Dwarf member)
+        public Tribe() => Tribes.Add(this);
+
+        public void AddMember(Dwarf member)
         {
             Members.Add(member);
             this.Force += member.Force;
@@ -34,17 +37,22 @@ namespace Dorfverwaltung
         {
             Force = 0;
             foreach (var member in Members)
-                Force += member.Force;
-            
+                Force += member.Force;    
         }
 
-        public void printTribe()
+        public static void PrintTribes()
+        {
+            foreach (var tribe in Tribe.Tribes)
+                tribe.PrintTribe();
+        }
+
+        public void PrintTribe()
         {
             CalculateForce();
 
             Console.WriteLine($"-- {Name} --");
             Console.WriteLine($"\tExisting since: {ExistingSince}");
-            Console.WriteLine($"\tLeader: {Leader.Name} since {LeaderSince}");
+            Console.WriteLine($"\tLeader: {Leader.Name} since {LeaderSince} years");
             Console.WriteLine("\tMembers:");
             foreach (var member in Members)
                 Console.WriteLine($"\t\t - {member.Name}");
