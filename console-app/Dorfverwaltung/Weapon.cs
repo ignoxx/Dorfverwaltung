@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Dorfverwaltung
 {
@@ -8,6 +9,19 @@ namespace Dorfverwaltung
 
         public Weapon() => Weapons.Add(this);
         public string Type { get; set; }
+
         public int MagicValue { get; set; }
+
+        public static void PrintWeapons()
+        {
+            Console.Write("Weapons:");
+            foreach (var weapon in Weapon.Weapons)
+            {
+                Console.Write($" {weapon.Type}({weapon.MagicValue})");
+            }
+
+            Console.WriteLine();
+            Console.WriteLine();
+        }
     }
 }

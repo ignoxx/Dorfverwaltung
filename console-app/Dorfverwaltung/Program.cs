@@ -24,55 +24,53 @@ namespace Dorfverwaltung
             var d3 = new Dwarf() { Name = "Gumli", Age = 163, Tribe = t2, Weapons = new List<Weapon>() { w4, w5 } };
 
             t1.Leader = d1;
-            t1.LeaderSince = "25 years";
+            t1.LeaderSince = 25;
 
             t2.Leader = d3;
-            t2.LeaderSince = "unknown";
+            t2.LeaderSince = 0;
 
             // User Input
             string dwarfName;
             string weaponName;
+            Random random;
+            Dwarf dwarf;
+            Weapon weapon;
+
             while (true)
             {
                 // Output
                 Console.Clear();
-
-                t1.printTribe();
-                t2.printTribe();
-
-                // List existing weapons
-                Console.Write("Weapons:");
-                foreach(var weapon in Weapon.Weapons)
-                    Console.Write($" {weapon.Type}({weapon.MagicValue})");
-                
-                Console.WriteLine();
-                Console.WriteLine();
+                Tribe.PrintTribes();
+                Weapon.PrintWeapons();
 
                 // User Input
-                Console.Write("Enter Dwarf name: ");
+                Console.Write("Enter Dwarf name (blank for a random dwarf): ");
                 dwarfName = Console.ReadLine();
 
-                Console.Write("Choose a weapon: ");
+                Console.Write("Choose a weapon (blank for a random weapon): ");
                 weaponName = Console.ReadLine();
 
-                // Simple input check
-                if (dwarfName.Length == 0 || weaponName.Length == 0)
-                    return;
-
-                // Search for the dwarf give weapon
-                foreach(var dwarf in Dwarf.Dwarfs)
+                // Check input. If the input is blank, choose randomly
+                if (dwarfName == string.Empty)
                 {
-                    if(dwarf.Name == dwarfName)
-                    {
-                        foreach(var weapon in Weapon.Weapons)
-                        {
-                            if (weapon.Type == weaponName)
-                            {
-                                dwarf.giveWeapon(weapon);
-                                break;
-                            }
-                        }
-                    }
+                    random = new Random();
+                    dwarfName = Dwarf.Dwarfs[random.Next(Dwarf.Dwarfs.Count)].Name;
+                }
+
+                if (weaponName == string.Empty)
+                {
+                    random = new Random();
+                    weaponName = Weapon.Weapons[random.Next(Weapon.Weapons.Count)].Type;
+                }
+
+                // Find the object
+                dwarf = Dwarf.Dwarfs.Find(x => x.Name == dwarfName);
+                weapon = Weapon.Weapons.Find(y => y.Type == weaponName);
+
+                // Check if the objects exists and give weapon
+                if ((dwarf != null) && (weapon != null))
+                {
+                    dwarf.GiveWeapon(weapon);
                 }
             }
         }
