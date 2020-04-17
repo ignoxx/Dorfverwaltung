@@ -55,7 +55,9 @@ namespace Dorfverwaltung
             Console.WriteLine($"\tLeader: {Leader.Name} since {LeaderSince} years");
             Console.WriteLine("\tMembers:");
             foreach (var member in Members)
+            {
                 Console.WriteLine($"\t\t - {member.Name}");
+            }
 
             Console.WriteLine($"\tTaxes: {Tax} gold");
             Console.WriteLine($"\tTotal force: {Force}");

@@ -70,6 +70,14 @@ namespace Dorfverwaltung
                 // Check if the objects exists and give weapon
                 if ((dwarf != null) && (weapon != null))
                     dwarf.GiveWeapon(weapon);
+
+                // Find the object
+                dwarf = Dwarf.Dwarfs.Find(x => x.Name == dwarfName);
+                weapon = Weapon.Weapons.Find(y => y.Type == weaponName);
+
+                // Check if the objects exists and give weapon
+                if ((dwarf != null) && (weapon != null))
+                    dwarf.GiveWeapon(weapon);
             }
         }
     }
