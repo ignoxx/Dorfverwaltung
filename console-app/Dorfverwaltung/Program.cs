@@ -5,7 +5,7 @@ namespace Dorfverwaltung
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             //Tribes
             Tribe t1 = new Tribe() { Name = "Altobarden", ExistingSince = "1247 ndK" };
