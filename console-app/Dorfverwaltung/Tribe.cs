@@ -6,19 +6,19 @@ namespace Dorfverwaltung
     class Tribe
     {
         public static List<Tribe> Tribes = new List<Tribe>();
-        private const float tax_rate = 2.125f;
-        private int _force;
+        private const float taxRate = 2.125f;
+        private int forceValue;
 
         public string Name { get; set; }
         public string ExistingSince { get; set; }
         private List<Dwarf> Members { get; set; } = new List<Dwarf>();
         public int Force
         {
-            get => _force;
+            get => forceValue;
             set
             {
-                _force = value;
-                Tax = _force * tax_rate;
+                forceValue = value;
+                Tax = forceValue * taxRate;
             }
         }
         public float Tax { get; set; }
